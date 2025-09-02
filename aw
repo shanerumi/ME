@@ -1,44 +1,43 @@
 
+/* shanedesign.css */
 
+/* General body style */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffe6f0;
-  color: #4a0033;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe4ec; /* light pink background */
+    color: #333; /* dark gray text */
 }
 
-header {
-  background-color: #ff4da6;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 1.5em;
-  font-weight: bold;
+/* Header frame */
+frame[src="shaneheader.html"] {
+    border: none;
+    background-color: #ff99cc; /* medium pink */
 }
 
-nav {
-  background-color: #ff99cc;
-  height: 100%;
-  padding: 15px;
+/* Navigation frame */
+frame[src="shanenavigation.html"] {
+    border: none;
+    background-color: #fff; /* white for contrast */
+    color: #333; /* text readable */
 }
 
-nav a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 8px;
-  margin-bottom: 6px;
-  border-radius: 6px;
-  background-color: #ff4da6;
-  transition: background 0.3s;
+/* Main content frame */
+frame[name="mid_column"] {
+    border: none;
+    background-color: #ffe4ec; /* light pink */
 }
 
-nav a:hover {
-  background-color: #e60073;
+/* Optional text styles */
+h1, h2, h3 {
+    color: #cc3366; /* darker pink for titles */
 }
 
-main {
-  background-color: #fff0f5;
-  padding: 20px;
-  min-height: 100%;
+a {
+    color: #cc3366;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
