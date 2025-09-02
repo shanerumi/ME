@@ -1,19 +1,21 @@
 
 <html>
     <head>
-        <title> Shane Awards Page </title>
+        <title> Shane Skills Page </title>
     </head>
     
     <body>
-        <h3> Awards </h3>
-        <p> <b> With Honor</b> <br>Guiguinto Nationa Vocational High School <br> 2024-2025</p>
+        <h3> Skills </h3>
+        <p> <b> Basic C / C# Language Coding</b></p>
             
-            <p> <b> 9 Times MCL Winner </b> <br> Mobile Legends <br></p>
+        <p> <b> Basic HTML Coding</b></p>
             
-            <p> <b> Mega Collector </b> <br> Mobile Legends</p>            
+        <p> <b> Basic CSS Coding</b></p>
+            
+        <p> <b> Pro Driving Using Johnson in Mobile Legends</b></p>
            
           <frameset cols = "40%,*">
-            <frame name "mid_column" src="shaneawards.html">
+            <frame name "mid_column" src="shaneskills.html">
              
             </frame>
           </frameset>
