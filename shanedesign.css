@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe4ec;
+    color: #333; 
+}
+
+frame[src="shaneheader.html"] {
+    border: none;
+    background-color: #ff99cc; 
+}
+frame[src="shanenavigation.html"] {
+    border: none;
+    background-color: #fff; 
+}
+
+frame[name="mid_column"] {
+    border: none;
+    background-color: #ffe4ec; 
+}
+
+
