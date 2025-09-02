@@ -1,15 +1,13 @@
-
 <html>
     <head>
-        <title> Shane Seminar Page </title>
+        <title> Shane Experience Page </title>
     </head>
     
     <body>
-        <h3> EDUCATION </h3>
-        <p> <b> Cisco Networking Academy Seminar</b> <br> 2025 </p>
-           
+        <h3> EXPERIENCE </h3>
+        <p> <b> Encoder</b> <br>Barangay Tuktukan Guiguinto Bulacan <br> 2025-2025</p>
           <frameset cols = "40%,*">
-            <frame name "mid_column" src="shaneseminars.html">
+            <frame name "mid_column" src="shaneexperience.html">
              
             </frame>
           </frameset>
