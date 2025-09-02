@@ -1,32 +1,28 @@
 <html>
-    
     <head>
-        <title>Shane Navigation Page</title>
+        <title> Shane Personal Information </title>
     </head>
     
     <body>
-        
-        <p> <h3> CONTENT </h3> </p>
-        <a href = "shanepersonalinformation.html" target = "mid_column">
-            Personal Information</a> <br>
+        <h3> PERSONAL INFORMATION </h3>
+        <p> <b> Name:</b> Shane Justine S. Gatdula</p<p>
             
-            <a href = "shaneeducation.html" target = "mid_column">
-            Education</a> <br>
+            <p> <b> Adress:</b> San Juan Street Tuktukan Guiguinto Bulacan </p>
             
-            <a href = "shaneexperience.html" target = "mid_column">
-            Experiences</a> <br>
+            <p> <b> Birthday:</b> January 11, 2006</p>
             
-            <a href = "shaneseminars.html" target = "mid_column">
-            Seminars Attended</a> <br>
+            <p> <b> Age:</b> 19</p>
             
-            <a href = "shaneawards.html" target = "mid_column">
-            Awards</a> <br>
+            <p> <b> Birth Place:</b> Bulakan, Bulacan</p>
             
-            <a href = "shaneskills.html" target = "mid_column">
-            Skills</a> <br>
+            <p> <b> Contact Number:</b> 09196244971</p>
             
-            <a href = "shanereference.html" target = "mid_column">
-            References</a> <br>
-        
+            <p> <b> Email Address:</b> gatdulashanejustine@gmail.com</p>
+          
+          <frameset cols = "40%,*">
+            <frame name "mid_column" src="shanepersonalinformation.html">
+             
+            </frame>
+          </frameset>
     </body>
 </html>
