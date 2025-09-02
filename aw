@@ -1,21 +1,18 @@
 
 <html>
     <head>
-        <title> Shane Skills Page </title>
+        <title> Shane Reference  Page </title>
     </head>
     
     <body>
-        <h3> Skills </h3>
-        <p> <b> Basic C / C# Language Coding</b></p>
+        <h3> Reference </h3>
+        <p> <b> Ms. Joana Marie Cruz</b> <br> 09123456789 </p>
             
-        <p> <b> Basic HTML Coding</b></p>
+        <p> <b> Ms. Deserie Robles  </b> <br> 09123456789 </p>
             
-        <p> <b> Basic CSS Coding</b></p>
-            
-        <p> <b> Pro Driving Using Johnson in Mobile Legends</b></p>
            
           <frameset cols = "40%,*">
-            <frame name "mid_column" src="shaneskills.html">
+            <frame name "mid_column" src="shanereference.html">
              
             </frame>
           </frameset>
