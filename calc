@@ -1,0 +1,120 @@
+import java.util.Scanner
+
+fun op(choice: Int){
+    cls()
+    val scanner = Scanner(System.`in`)
+    when(choice){
+        1 -> {
+            println("===== ADDITION =====")
+            println()
+            print("Enter Num1: ")
+            val num1 = scanner.nextInt()
+            print("Enter Num2: ")
+            val num2 = scanner.nextInt()
+            println()
+            println("The sum of $num1 and $num2 is ${num1 + num2}")
+            println("\nPress Enter to go back to Menu...")
+            scanner.nextLine() 
+            scanner.nextLine()
+            menu()
+        }
+        2 -> {
+            println("===== SUBTRACTION =====")
+            println()
+            print("Enter Num1: ")
+            val num1 = scanner.nextInt()
+            print("Enter Num2: ")
+            val num2 = scanner.nextInt()
+            println()
+            println("The difference of $num1 and $num2 is ${num1 - num2}")
+            println("\nPress Enter to go back to Menu...")
+            scanner.nextLine()
+            menu()
+        }
+        3 -> {
+            println("===== MULTIPLICATION =====")
+            println()
+            print("Enter Num1: ")
+            val num1 = scanner.nextInt()
+            print("Enter Num2: ")
+            val num2 = scanner.nextInt()
+            println()
+            println("The product of $num1 and $num2 is ${num1 * num2}")
+            println("\nPress Enter to go back to Menu...")
+            scanner.nextLine()
+            menu()
+        }
+        4 -> {
+            println("===== DIVISION =====")
+            println()
+            print("Enter Num1: ")
+            val num1 = scanner.nextInt()
+            print("Enter Num2: ")
+            val num2 = scanner.nextInt()
+            println()
+            if (num2 != 0) {
+                println("The quotient of $num1 and $num2 is ${num1 / num2}")
+            } else {
+                println("Error: Division by zero is not allowed!")
+            }
+            println("\nPress Enter to go back to Menu...")
+            scanner.nextLine()
+            menu()
+        }
+        5 -> {
+            println("Logging out..")
+            cls()
+            main()
+        }
+    }
+}
+
+fun cls() {
+    try {
+        val os = System.getProperty("os.name")
+        if (os.contains("Windows")) {
+            ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor()
+        } else {
+            print("\u001b[H\u001b[2J")
+            System.out.flush()
+        }
+    } catch (e: Exception) {
+    }
+}
+
+fun menu() {
+    val scanner = Scanner(System.`in`)
+    cls()
+    println("===== MENU =====")
+    println()
+    println("[1] ADDITION")
+    println("[2] SUBTRACTION")
+    println("[3] MULTIPLICATION")
+    println("[4] DIVISION")
+    println("[5] LOG OUT")
+    println()
+    print("Enter your Choice: ")
+    val choice = scanner.nextInt()
+    op(choice)
+}
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val users = mapOf(
+        "himiko" to "himiko12",
+        "toga" to "toga12",
+        "shane" to "shane12"
+    )
+    println("----- LOG IN -----")
+    print("Username: ")
+    val uname = scanner.nextLine()
+    print("Password: ")
+    val pass = scanner.nextLine()
+    if (users[uname] == pass) {
+        println("Successful LOG IN!")
+        cls()
+        menu()
+    } else {
+        println("Invalid LOG IN Credentials")
+    }
+}
