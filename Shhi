@@ -142,7 +142,7 @@ void searchpatients(struct patient* head, int scrhid){
 	printf("\n No ID of %d is Found.", srchid);
 	
 void deletepatients(struct patient** head, srchid){
-    struct patient* new = NULL;
+    struct patient* prev = NULL;
     struct patient* temp = *head;
     
     if(currenttemp!= NULL && temp->patientid == srchid){
