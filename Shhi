@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,9 +13,6 @@ struct patient {
 void himikomenu();
 void himikoaddpatient(struct patient** head, int patientid, char patientname[], int patientage, char patientillness[]);
 struct patient* himikocreatepatient(int patientid, char patientname[], int patientage, char patientillness[]);
-void pauseConsole();
-void searchpatients(struct patient* head, int srchid);
-void displaypatients(struct patient* head);
 
 void himikomenu() {
     struct patient* head = NULL;
@@ -62,23 +58,26 @@ void himikomenu() {
                 break;
 
             case 2:
-                system("cls");
-                displaypatients(head);
+            	system("cls");
+                displaypatiens(head);
                 break;
 
             case 3:
-                system("cls");
+            	system("cls");
                 printf("Enter ID to Search: ");
-                scanf("%d", &srchid);
-                getchar();
-                searchpatients(head, srchid);
-                pauseConsole();
+            	scanf("%d", &srchid);
+            	getchar();
+            	searchpatients(head, srchid);
+            	pauseConsole();
                 break;
 
             case 4:
-                system("cls");
-                printf("Delete function not yet implemented.\n");
-                pauseConsole();
+            	system("cls");
+                printf("Enter ID to Delete: ");
+            	scanf("%d", &srchid);
+            	getchar();
+            	deletepatients(&head, srchid);
+            	pauseConsole();
                 break;
 
             case 5:
@@ -122,47 +121,69 @@ struct patient* himikocreatepatient(int patientid, char patientname[], int patie
     return himikonewpatient;
 }
 
-void pauseConsole() {
-    printf("\nPress Enter to Continue...");
-    getchar();
+void pauseConsole(){
+	printf("\n Press any Key to Continue");
+	getchar(); getchar();
 }
 
-void searchpatients(struct patient* head, int srchid) {
-    while (head != NULL) {
-        if (head->patientid == srchid) {
-            system("cls");
-            printf("ID: %d\n", head->patientid);
-            printf("Patient Name: %s\n", head->patientname);
-            printf("Age: %d\n", head->patientage);
-            printf("Patient Illness: %s\n", head->patientillness);
-            printf("====================\n");
-            return;
-        }
-        head = head->next;
-    }
-    printf("\nNo patient with ID %d was found.\n", srchid);
+void searchpatients(struct patient* head, int scrhid){
+	while(head != NULL)
+	if(head->patientid == srchid){
+	system("cls");
+		printf("ID: %d\n", head->patientid);
+		printf("Patient Name: %s\n", head->patientname);
+		printf("Age: %d\n", head->patientage);
+		printf("Patient Illness: %s\n", head->patientillness);
+		printf("============");
+		return;
+		}
+		head = head ->next;
+}
+	printf("\n No ID of %d is Found.", srchid);
+	
+void deletepatients(struct patient** head, srchid){
+    struct patient* new = NULL;
+    struct patient* temp = *head;
+    
+    if(currenttemp!= NULL && temp->patientid == srchid){
+    	*head = temp->next;
+    	free(temp);
+    	printf("\nPatient with &d is Deleted");
+    	return;
+	}
+	while(temp != NULL && temp->patientid != srchid){
+		prev = temp;
+		temp = temp->patientid;
+	}
+	if(temp == NULL){
+		printf("Patent with ID %d is not Found.");
+		return;
+	}
+	prev->next = temp ->next;
+	free(temp);
+	printf("\nPatient with ID %d is Deleted.");
+}
+void displaypatients(struct patient* head){
+	if(head == NULL){
+		system("cls");
+		printf("\n No Patients Found.");
+		pauseConsole();
+		return;
+	}
+	system("cls");
+	printf("===== Patients Information ======\n");
+	while ( head!= NULL ){
+		printf("ID: %d\n", head->patientid);
+		printf("Patient Name: %s\n", head->patientname);
+		printf("Age: %d\n", head->patientage);
+		printf("Patient Illness: %s\n", head->patientillness);
+		printf("============");
+		head = head->next;
+	}
+	pauseConsole();
 }
 
-void displaypatients(struct patient* head) {
-    if (head == NULL) {
-        printf("\nNo Patients Found.\n");
-        pauseConsole();
-        return;
-    }
-
-    printf("===== Patients Information ======\n");
-    while (head != NULL) {
-        printf("ID: %d\n", head->patientid);
-        printf("Patient Name: %s\n", head->patientname);
-        printf("Age: %d\n", head->patientage);
-        printf("Patient Illness: %s\n", head->patientillness);
-        printf("====================\n");
-        head = head->next;
-    }
-    pauseConsole();
-}
-
-int main() {
+int main(int argc, char *argv[]) {
     char himikousername[] = "admin";
     char himikopassword[] = "admin123";
     char himikoinuname[50];
