@@ -1,0 +1,132 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct patient {
+    int patientid;
+    char patientname[50];
+    int patientage;
+    char patientillness[100];
+    struct patient* next;
+};
+
+void himikomenu();
+void himikoaddpatient(struct patient** head, int patientid, char patientname[], int patientage, char patientillness[]);
+struct patient* himikocreatepatient(int patientid, char patientname[], int patientage, char patientillness[]);
+
+void himikomenu() {
+    struct patient* head = NULL;
+    int himikochoice, patientid, patientage;
+    char patientname[50], patientillness[100];
+
+    while (1) {
+        system("clear");
+        printf("==== Patient Management System ====\n");
+        printf("[1] Add patient\n");
+        printf("[2] Display all patients\n");
+        printf("[3] Search patient by ID\n");
+        printf("[4] Delete patient by ID\n");
+        printf("[5] LOG OUT\n");
+        printf("\nEnter choice: ");
+        scanf("%d", &himikochoice);
+        getchar(); // clear newline after scanf
+
+        switch (himikochoice) {
+            case 1:
+                system("clear");
+                printf("Enter ID: ");
+                scanf("%d", &patientid);
+                getchar();
+
+                printf("Enter name: ");
+                fgets(patientname, sizeof(patientname), stdin);
+                patientname[strcspn(patientname, "\n")] = '\0';
+
+                printf("Enter Age: ");
+                scanf("%d", &patientage);
+                getchar();
+
+                printf("Enter Illness: ");
+                fgets(patientillness, sizeof(patientillness), stdin);
+                patientillness[strcspn(patientillness, "\n")] = '\0';
+
+                himikoaddpatient(&head, patientid, patientname, patientage, patientillness);
+
+                printf("\nPatient information successfully saved.\n");
+                printf("Press Enter to continue...");
+                getchar();
+                break;
+
+            case 2:
+                printf("2\n");
+                break;
+
+            case 3:
+                printf("3\n");
+                break;
+
+            case 4:
+                printf("4\n");
+                break;
+
+            case 5:
+                printf("Exiting...\n");
+                exit(0);
+
+            default:
+                printf("\nInvalid choice\n");
+                printf("Press Enter to continue...");
+                getchar();
+                break;
+        }
+    }
+}
+
+void himikoaddpatient(struct patient** head, int patientid, char patientname[], int patientage, char patientillness[]) {
+    struct patient* himikonewpatient = himikocreatepatient(patientid, patientname, patientage, patientillness);
+
+    if (*head == NULL) {
+        *head = himikonewpatient;
+        return;
+    }
+
+    struct patient* himikoTemp = *head;
+    while (himikoTemp->next != NULL) {
+        himikoTemp = himikoTemp->next;
+    }
+
+    himikoTemp->next = himikonewpatient;
+}
+
+struct patient* himikocreatepatient(int patientid, char patientname[], int patientage, char patientillness[]) {
+    struct patient* himikonewpatient = (struct patient*)malloc(sizeof(struct patient));
+
+    himikonewpatient->patientid = patientid;
+    strcpy(himikonewpatient->patientname, patientname);
+    himikonewpatient->patientage = patientage;
+    strcpy(himikonewpatient->patientillness, patientillness);
+    himikonewpatient->next = NULL;
+
+    return himikonewpatient;
+}
+
+int main(int argc, char *argv[]) {
+    char himikousername[] = "admin";
+    char himikopassword[] = "admin123";
+    char himikoinuname[50];
+    char himikoinpass[50];
+
+    printf("Username: ");
+    scanf("%s", himikoinuname);
+
+    printf("Password: ");
+    scanf("%s", himikoinpass);
+
+    if (strcmp(himikousername, himikoinuname) == 0 && strcmp(himikopassword, himikoinpass) == 0) {
+        himikomenu();
+    } else {
+        printf("Invalid login.\n");
+    }
+
+    return 0;
+}
