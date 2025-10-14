@@ -1,0 +1,55 @@
+/* Reset and global style */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe4ec;
+    color: #333;
+}
+
+/* Header frame design */
+frame[src="gatdulaHeader.php"] {
+    border: none;
+    background-color: #ff99cc; /* Light pink header */
+}
+
+/* Navigation frame design */
+frame[src="gatdulaNavigation.php"] {
+    border: none;
+    background-color: #fff; /* White navigation background */
+}
+
+/* Middle frame design (main content area) */
+frame[name="mid_column"] {
+    border: none;
+    background-color: #ffe4ec; /* Same as body for clean look */
+}
+
+/* Header text design */
+h1 {
+    color: #b30059;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #660033;
+    text-align: center;
+}
+
+/* Navigation links style */
+a {
+    text-decoration: none;
+    color: #b30059;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff0066;
+}
+
+/* Optional: add spacing for navigation links */
+h2 a {
+    display: block;
+    margin: 8px 0;
+}
