@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    int gatdula_numstud, gatdula_counter;
+    float *gatdulagrades, gatdulasum = 0.0, gatdulaaverage;
+    
+    printf("Enter Number of Students: ");
+    scanf("%d", &gatdula_numstud);
+
+    gatdulagrades = (float*) malloc(gatdula_numstud * sizeof(float));
+
+    if(gatdulagrades == NULL){
+        printf("Memory Allocation Failed.\n");
+        return 1;
+    }
+
+    printf("Enter the Grades of %d Students:\n", gatdula_numstud);
+    for (gatdula_counter = 0; gatdula_counter < gatdula_numstud; gatdula_counter++){
+        printf("Grade %d: ", gatdula_counter + 1);
+        scanf("%f", &gatdulagrades[gatdula_counter]);
+        gatdulasum += gatdulagrades[gatdula_counter];
+    }
+
+    gatdulaaverage = gatdulasum / gatdula_numstud;
+    printf("The Average Grade is %.2f\n", gatdulaaverage);
+
+    free(gatdulagrades);
+    
+    return 0;
+}
