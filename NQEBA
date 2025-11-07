@@ -1,0 +1,15 @@
+CREATE DATABASE activity_act2a;
+
+USE activity_act2a;
+
+CREATE TABLE registration_2a (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fname VARCHAR(30) NOT NULL,
+    lname VARCHAR(40) NOT NULL,
+    course VARCHAR(50) NOT NULL,
+    year_section VARCHAR(10) NOT NULL,
+    contact_number CHAR(11) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(20) NOT NULL
+);
