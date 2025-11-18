@@ -1,0 +1,16 @@
+CREATE TABLE gatdula_registration (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    gatdulaFirstName VARCHAR(50) NOT NULL,
+    gatdulaLastName VARCHAR(50) NOT NULL,
+    gatdulaMail VARCHAR(100) NOT NULL,
+    gatdulaUsername VARCHAR(50) NOT NULL,
+    gatdulaPassword VARCHAR(255) NOT NULL,
+    gatdulaConfirmedPassword VARCHAR(255) NOT NULL,
+    gatdulaNumber VARCHAR(20) NOT NULL,
+    gatdulaStreetAddress VARCHAR(100) NOT NULL,
+    gatdulaBarangay VARCHAR(100) NOT NULL,
+    gatdulaCity VARCHAR(100) NOT NULL,
+    gatdulaStateProvince VARCHAR(100) NOT NULL,
+    gatdulaZipCode VARCHAR(20) NOT NULL,
+    gatdulaCountry VARCHAR(100) NOT NULL
+);
